@@ -47,7 +47,6 @@
 		foreach ( $lists as $key => $val ) {
 			if (!preg_match("!\<\!\-\- wp:lists-impay/$key \-\-\>(.*?)\<\!\-\- /wp:lists-impay/$key \-\-\>!si",
 				$post->post_content , $matches)) continue;
-			include __DIR__."/lists/$val.php";
 			$list = new $val();
 			$string = impay_lists_get_include_contents($key, $list);
 			impay_lists_set_scripts($key);
@@ -114,7 +113,6 @@
 
 		$listClassName = $lists[$_POST['list_name']];
 
-		require __DIR__."/lists/$listClassName.php";
 		$list = new $listClassName();
 
 		$filename = __DIR__."/templates/{$_POST['list_name']}.php";

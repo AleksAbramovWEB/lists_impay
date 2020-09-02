@@ -13,6 +13,7 @@
 	require __DIR__."/functions.php";
 	require __DIR__."/ImpayListsDb.php";
 	require __DIR__."/lists/ImpayLists.php";
+	require __DIR__."/lists/ImpayListsSanctionsList.php";
 
 	add_filter( 'block_categories', 'my_plugin_block_categories', 10, 2 );
 
