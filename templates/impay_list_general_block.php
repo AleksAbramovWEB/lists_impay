@@ -10,7 +10,7 @@
                    aria-controls="tablepress-1">
         </label>
     </div>
-    <div class="impay_lists_data">
+    <div id="impay_lists_data">
         <?php include $filename?>
     </div>
 </div>

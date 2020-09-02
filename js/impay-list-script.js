@@ -16,19 +16,19 @@ jQuery(document).ready(function ($){
                 if (!$("img").is(".loader_list"))
                    $('.count_string_list').append('<img class="loader_list" src="'+impayListsData.loader+'">')
             },
-            success: function(data) { $('.impay_lists_data').html(data) },
+            success: function(data) { $('#impay_lists_data').html(data) },
             error: function (){ console.log('error') }
         });
     }
 
-    $(".impay_lists_data").on('click', '#impay_paginate_button_next', function (){
+    $("#impay_lists_data").on('click', '#impay_paginate_button_next', function (){
         if ($(this).hasClass("disabled")) return;
         let search = $('#impay_lists_data_search').val();
         let until = $(this).attr('data-until');
         impayAjax( search, until );
     });
 
-    $(".impay_lists_data").on('click', '#impay_paginate_button_previous', function (){
+    $("#impay_lists_data").on('click', '#impay_paginate_button_previous', function (){
         if ($(this).hasClass("disabled")) return;
         let search = $('#impay_lists_data_search').val();
         let from = $(this).attr('data-from');
@@ -40,7 +40,7 @@ jQuery(document).ready(function ($){
         impayAjax( search );
     });
 
-    $('.impay_lists_data').on('click', '.impay_list_string_title', function (){
+    $('#impay_lists_data').on('click', '.impay_list_string_title', function (){
         let hidden_info = $(this).siblings(".impay_list_hidden_info");
         let pointer = $(this).children('.dashicons');
         if (pointer.hasClass('dashicons-arrow-down'))
