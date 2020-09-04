@@ -40,7 +40,7 @@
 	function impay_lists_get_content($content){
 
 		if (is_admin() OR $_SERVER['REQUEST_METHOD'] == 'POST') return $content;
-		$lists = require __DIR__."\configs\lists.conf.php";
+		$lists = require __DIR__."/configs/lists.conf.php";
 
 		global $post;
 
@@ -107,7 +107,7 @@
 	 */
 	function impay_lists_ajax(){
 		if( ! wp_verify_nonce( $_POST['nonce'], 'impay-list-nonce' ) ) wp_die('');
-		$lists = require __DIR__."\configs\lists.conf.php";
+		$lists = require __DIR__."/configs/lists.conf.php";
 
 		if (empty($lists[$_POST['list_name']]))  wp_die('');
 
